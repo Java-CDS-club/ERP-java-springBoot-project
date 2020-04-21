@@ -1,0 +1,26 @@
+spring.application.name: product-service
+server.port: 8484
+
+## DB config
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/BDtest
+    username: postgres
+    password: admin
+
+# Logging
+logging.level:
+  org.hibernate:
+    stat: debug
+    type: trace
